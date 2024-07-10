@@ -22,7 +22,7 @@ def handleFruit(request, id=None):
 
                 if fruit is None:
                     return JsonResponse({
-                        'message':'fruit is does not exist with id'
+                        'message':f'fruit does not exist with id {id}'
                     })
                 
                 fruit.name=name
@@ -42,7 +42,7 @@ def handleFruit(request, id=None):
                 fruit.save()
 
                 return JsonResponse({
-                    'message':'fruit is updated successfully'
+                    'message':'fruit updated successfully'
                 })
             
             fruit=Fruit()
@@ -61,7 +61,7 @@ def handleFruit(request, id=None):
             fruit.save()
             
             return JsonResponse({
-                'message':'New fruit add successfully !!'
+                'message':'New fruit added successfully !!'
             })
         
         return JsonResponse({
@@ -126,7 +126,7 @@ def handleOwner(request, id=None):
 
                 if owner is None:
                     return JsonResponse({
-                        'message':'owner is does not exist'
+                        'message':'owner does not exist'
                     })
                 owner.name=name
                 owner.shop_name=shop_name
@@ -137,11 +137,11 @@ def handleOwner(request, id=None):
             owner.shop_name=shop_name
             owner.save()
             return JsonResponse({
-                'message':'Owner is added successfully !!'
+                'message':'Owner added successfully !!'
             })    
         
         return JsonResponse({
-            'message':'name or shop name is required !'
+            'message':'name and shop name is required !'
         })
 
 
